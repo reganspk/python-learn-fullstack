@@ -1,0 +1,17 @@
+{%extends "layout.html" %} {%block title%} Python {%endblock%} {%block content%}
+
+<h1>Search Results</h1>
+{% if query %}
+<p>Results for "{{ query }}":</p>
+{% if results %}
+<ul>
+  {% for tweet in results %}
+  <li>{{ tweet.content }}</li>
+  <!-- Replace 'content' with your model field -->
+  {% endfor %}
+</ul>
+{% else %}
+<p>No results found.</p>
+{% endif %} {% else %}
+<p>Please enter a search query.</p>
+{% endif %} {% endblock %}
